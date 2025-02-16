@@ -19,10 +19,10 @@ const Slider = () => {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
         >
-            <SwiperSlide><img className='w-full h-[300px] md:h-[500px] lg:h-[800px] object-cover' src="pictures/slide1.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img className='w-full h-[300px] md:h-[500px] lg:h-[800px] object-cover' src="pictures/slide2.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img className='w-full h-[300px] md:h-[500px] lg:h-[800px] object-cover' src="pictures/slide3.jpg" alt="" /></SwiperSlide>
-            <SwiperSlide><img className='w-full h-[300px] md:h-[500px] lg:h-[800px] object-cover' src="pictures/slide4.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full h-[300px] md:h-[400px] lg:h-[550px] object-fill' src="pictures/slide1.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full h-[300px] md:h-[400px] lg:h-[550px] object-fill' src="pictures/slide2.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full h-[300px] md:h-[400px] lg:h-[550px] object-fill' src="pictures/slide3.jpg" alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full h-[300px] md:h-[400px] lg:h-[550px] object-fill' src="pictures/slide4.jpg" alt="" /></SwiperSlide>
         </Swiper>
 
 
