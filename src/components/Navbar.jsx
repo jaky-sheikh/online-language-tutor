@@ -40,7 +40,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"><FaGraduationCap></FaGraduationCap>TutorHive</a>
+                    <a className="btn btn-ghost text-sm md:text-xl flex items-center gap-1"><FaGraduationCap></FaGraduationCap>TutorHive</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

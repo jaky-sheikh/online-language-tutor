@@ -2,11 +2,14 @@ import Slider from "../components/Slider";
 import Stat from "../components/Stat";
 
 
+
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <Stat></Stat>
+            <div className="my-6">
+                <Stat></Stat>
+            </div>
         </div>
     );
 };

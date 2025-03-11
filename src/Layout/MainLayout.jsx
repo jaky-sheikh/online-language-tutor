@@ -7,14 +7,14 @@ const MainLayout = () => {
     return (
         <div className="w-11/12 mx-auto">
             <header>
-                <nav>
+                <nav className="mt-4">
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main>
+            <main className="mt-4">
                 <Outlet></Outlet>
             </main>
-            <footer>
+            <footer className="mb-4">
                 <Footer></Footer>
             </footer>
         </div>
