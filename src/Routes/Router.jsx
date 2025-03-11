@@ -14,16 +14,21 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/allEquipment',
+                path: '/findTutors',
                 element: <h3>Hello1</h3>
             },
             {
-                path: '/addEquipment',
+                path: '/addTutorials',
                 element: <h3>Hello2</h3>
             },
             {
-                path: '/myEquipmentList',
+                path: '/myTutorials',
                 element: <h2>Hello3</h2>
+
+            },
+            {
+                path: '/myBookedTutors',
+                element: <h2>Hello4</h2>
 
             },
 
@@ -36,11 +41,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/auth/login",
-                element: <h2>Hello4</h2>
+                element: <h2>Hello5</h2>
             },
             {
                 path: "/auth/register",
-                element: <h2>Hello5</h2>
+                element: <h2>Hello6</h2>
             },
         ],
     },
