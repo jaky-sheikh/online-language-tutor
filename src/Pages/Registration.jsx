@@ -1,9 +1,15 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import registerLottieData from '../assets/lottie/register.json';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
+
+    const { createNewUser, setUser, updateUserProfile, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleRegister = e => {
         e.preventDefault();
@@ -16,16 +22,64 @@ const Registration = () => {
 
 
         if (!validatePassword(password)) {
-            alert("At least 6 digits, one upper, one lower, one number and one special character")
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Password",
+                text: "Password must be at least 6 characters long, contain 1 uppercase, 1 lowercase, 1 number, and 1 special character.",
+            });
             return;
         }
 
+        setErrorMessage("");
+
         // console.log("Registration successful", name, email, password, photo);
+
+        createNewUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                // const newUser = { name, email }
+                // setUser(user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        setUser({ ...user, displayName: name, photoURL: photo });
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registration Successful!",
+                            text: "Your account has been created successfully.",
+                        });
+                        navigate("/");
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                        Swal.fire({
+                            icon: "error",
+                            title: "Profile Update Failed",
+                            text: "Failed to update user profile.",
+                        });
+                    });
+            })
+            .catch(error => {
+                console.log(error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Registration Failed",
+                    text: error.message,
+                });
+            })
     }
 
     function validatePassword(password) {
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         return regex.test(password);
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate('/');
+            })
+            .catch(error => console.log('ERROR', error.message))
     }
 
     return (
@@ -66,6 +120,7 @@ const Registration = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
+                        <button onClick={handleGoogleSignIn} className="btn">Login with Google</button>
                     </form>
                     <h3 className="text-center pb-2">Already have an account? Please <Link className="text-orange-500" to="/auth/login">Login</Link></h3>
                 </div>
