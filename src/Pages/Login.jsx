@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 h-auto md:h-auto lg:h-[600px]">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <Lottie animationData={signInLottieData}></Lottie>
