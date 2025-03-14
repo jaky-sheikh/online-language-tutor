@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaGraduationCap } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
 
     const links = <>
         <li><Link to='/'><a>Home</a></Link></li>
@@ -50,8 +54,29 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <Link to='/auth/login'><button className="btn btn-accent">Login</button></Link>
-                    <Link to='/auth/register'><button className="btn btn-accent">Register</button></Link>
+
+                    {
+                        user && user?.email ? (
+                            <div><img className="w-10 rounded-full" src={user?.photoURL} alt="User Profile" title={user?.displayName} /></div>
+                        ) : (
+                            <p></p>
+                        )
+                    }
+
+                    {
+                        user && user?.email ? (
+                            <button onClick={logOut} className="btn btn-accent">
+                                Log-Out
+                            </button>
+                        ) : (
+                            <>
+                                <Link to='/auth/login'><button className="btn btn-accent">Login</button></Link>
+                                <Link to='/auth/register'><button className="btn btn-accent">Register</button></Link>
+                            </>
+                        )
+                    }
+
+
                 </div>
             </div>
         </div>
