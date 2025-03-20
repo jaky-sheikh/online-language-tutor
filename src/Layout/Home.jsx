@@ -1,3 +1,4 @@
+import Cards from "../components/Cards";
 import Slider from "../components/Slider";
 import Stat from "../components/Stat";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <div className="my-6">
                 <Stat></Stat>
             </div>
+            <Cards></Cards>
         </div>
     );
 };
