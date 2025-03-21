@@ -1,4 +1,5 @@
 import Cards from "../components/Cards";
+import Guaranteed from "../components/Guaranteed";
 import Slider from "../components/Slider";
 import Stat from "../components/Stat";
 
@@ -12,6 +13,7 @@ const Home = () => {
                 <Stat></Stat>
             </div>
             <Cards></Cards>
+            <Guaranteed></Guaranteed>
         </div>
     );
 };

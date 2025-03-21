@@ -18,7 +18,7 @@ const Stat = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-orange-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-orange-300 rounded-sm">
             <div className="stats shadow">
                 <div className="stat">
                     <div className="stat-title">Total Tutors</div>
