@@ -18,26 +18,26 @@ const Stat = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-orange-300 rounded-sm">
-            <div className="stats shadow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-sm">
+            <div className="stats shadow bg-slate-300">
                 <div className="stat">
                     <div className="stat-title">Total Tutors</div>
                     <div className="stat-value">{stats.tutorCount}</div>
                 </div>
             </div>
-            <div className="stats shadow">
+            <div className="stats shadow bg-slate-300">
                 <div className="stat">
                     <div className="stat-title">Total Reviews</div>
                     <div className="stat-value">{stats.reviewCount}</div>
                 </div>
             </div>
-            <div className="stats shadow">
+            <div className="stats shadow bg-slate-300">
                 <div className="stat">
                     <div className="stat-title">Total Languages</div>
                     <div className="stat-value">{stats.languageCount}</div>
                 </div>
             </div>
-            <div className="stats shadow">
+            <div className="stats shadow bg-slate-300">
                 <div className="stat">
                     <div className="stat-title">Total Users</div>
                     <div className="stat-value">{stats.userCount}</div>

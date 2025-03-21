@@ -1,9 +1,10 @@
 import React from 'react';
+import { Bounce } from 'react-awesome-reveal';
 
 const Faq = () => {
     return (
         <div className='mb-4'>
-            <h2 className='text-center text-3xl font-bold'>FAQ(Frequently Asked Questions)</h2>
+            <Bounce><h2 className='text-center text-3xl font-bold'>FAQ(Frequently Asked Questions)</h2></Bounce>
             <div className="collapse collapse-arrow bg-base-200 mb-2">
                 <input type="radio" name="my-accordion-2" defaultChecked />
                 <div className="collapse-title text-xl font-medium">How does tutorhive work?</div>
