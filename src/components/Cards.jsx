@@ -21,7 +21,7 @@ const Cards = () => {
                     cards.map((card, index) => (
                         <div key={index}
                             className='flex items-center justify-between bg-white shadow-md p-5 rounded-lg cursor-pointer hover:shadow-lg transition'
-                            onClick={() => navigate(`/find-tutors?card=${card.title}`)}
+                            onClick={() => navigate(`/findTutors?card=${card.title}`)}
                         >
                             <div className='flex items-center gap-4'>
                                 <img src={`${card.logo}`} className='w-12 h-12' alt={card.title} />
