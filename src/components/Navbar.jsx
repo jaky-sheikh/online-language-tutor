@@ -1,21 +1,35 @@
 import { Link } from "react-router-dom";
 import { FaGraduationCap } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [theme, setTheme] = useState("light");
 
     const links = <>
         <li><Link to='/'><a>Home</a></Link></li>
-        <li><Link to='/findTutors'><a>Find Tutors</a></Link></li>
-        <li><Link to='/addTutorials'><a>Add Tutorials</a></Link></li>
-        <li><Link to='/myTutorials'><a>My Tutorials</a></Link></li>
-        <li><Link to='/myBookedTutors'><a>My booked tutors</a></Link></li>
+        <li><Link to='/find-all-tutors'><a>Find Tutors</a></Link></li>
+        <li><Link to='/add-tutorials'><a>Add Tutorials</a></Link></li>
+        <li><Link to='/my-tutorials'><a>My Tutorials</a></Link></li>
+        <li><Link to='/my-tutors'><a>My booked tutors</a></Link></li>
 
     </>
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        setTheme(savedTheme);
+        document.querySelector("html").setAttribute("data-theme", savedTheme);
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        document.querySelector("html").setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
 
     return (
         <div>
@@ -52,6 +66,11 @@ const Navbar = () => {
                             links
                         }
                     </ul>
+                </div>
+                <div>
+                    <button onClick={toggleTheme} className="btn btn-outline border-base-content text-base-content w-full md:w-auto">
+                        {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+                    </button>
                 </div>
                 <div className="navbar-end gap-2">
 

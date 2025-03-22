@@ -4,6 +4,8 @@ import Home from "../Layout/Home";
 import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
+import FindTutors from "../Pages/FindTutors";
+import FindAllTutors from "../Pages/FindAllTutors";
 
 
 const router = createBrowserRouter([
@@ -16,27 +18,30 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/findTutors',
-                element: <h3>Hello1</h3>
+                path: '/find-tutors/:category',
+                element: <FindTutors></FindTutors>
             },
             {
-                path: '/addTutorials',
+                path: "/find-all-tutors",
+                element: <FindAllTutors></FindAllTutors>
+            },
+            {
+                path: '/add-tutorials',
                 element: <h3>Hello2</h3>
             },
             {
-                path: '/myTutorials',
+                path: '/my-tutorials',
                 element: <h2>Hello3</h2>
 
             },
             {
-                path: '/myBookedTutors',
+                path: '/my-tutors',
                 element: <h2>Hello4</h2>
 
             },
 
         ]
     },
-
     {
         path: "auth",
         element: <AuthLayout></AuthLayout>,
