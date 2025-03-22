@@ -12,8 +12,8 @@ const FindTutors = () => {
             .then(data => setTutors(data));
     }, [category]);
 
-    console.log(tutors);
-    console.log(category);
+    // console.log(tutors);
+    // console.log(category);
 
     return (
         <div>

@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
 import FindTutors from "../Pages/FindTutors";
 import FindAllTutors from "../Pages/FindAllTutors";
+import ErrorPage from "../components/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
 
     {
         path: '*',
-        element: <h1>404 - Page Not Found</h1>
+        element: <ErrorPage></ErrorPage>
     }
 
 ]);

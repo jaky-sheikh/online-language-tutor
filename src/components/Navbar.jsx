@@ -15,7 +15,6 @@ const Navbar = () => {
         <li><Link to='/add-tutorials'><a>Add Tutorials</a></Link></li>
         <li><Link to='/my-tutorials'><a>My Tutorials</a></Link></li>
         <li><Link to='/my-tutors'><a>My booked tutors</a></Link></li>
-
     </>
 
     useEffect(() => {
