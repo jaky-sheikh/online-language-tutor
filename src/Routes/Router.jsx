@@ -9,6 +9,7 @@ import FindAllTutors from "../Pages/FindAllTutors";
 import ErrorPage from "../components/ErrorPage";
 import AddTutorials from "../components/AddTutorials";
 import PrivateRoute from "./PrivateRoute";
+import TutorDetails from "../Pages/TutorDetails";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/find-all-tutors",
                 element: <FindAllTutors></FindAllTutors>
+            },
+            {
+                path: "/tutor/:id",
+                element: <PrivateRoute><TutorDetails></TutorDetails></PrivateRoute>
             },
             {
                 path: '/add-tutorials',
