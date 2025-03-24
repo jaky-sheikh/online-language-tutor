@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-pink-400 p-4">
+            <div className="navbar bg-pink-400">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +57,16 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-sm md:text-xl flex items-center gap-1"><FaGraduationCap></FaGraduationCap>TutorHive</a>
+                    <div className="flex">
+                        <div>
+                            <a className="btn btn-ghost text-sm md:text-xl flex items-center gap-1"><FaGraduationCap></FaGraduationCap>TutorHive</a>
+                        </div>
+                        <div>
+                            <button onClick={toggleTheme} className="btn btn-outline w-full md:w-auto">
+                                {theme === "light" ? "🌙Dark" : "☀️Light"}
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -66,11 +75,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div>
-                    <button onClick={toggleTheme} className="btn btn-outline border-base-content text-base-content w-full md:w-auto">
-                        {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-                    </button>
-                </div>
+
                 <div className="navbar-end gap-2">
 
                     {

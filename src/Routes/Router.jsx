@@ -7,6 +7,8 @@ import Registration from "../Pages/Registration";
 import FindTutors from "../Pages/FindTutors";
 import FindAllTutors from "../Pages/FindAllTutors";
 import ErrorPage from "../components/ErrorPage";
+import AddTutorials from "../components/AddTutorials";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-tutorials',
-                element: <h3>Hello2</h3>
+                element: <PrivateRoute><AddTutorials></AddTutorials></PrivateRoute>
             },
             {
                 path: '/my-tutorials',

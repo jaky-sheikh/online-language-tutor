@@ -37,8 +37,20 @@ const Registration = () => {
         createNewUser(email, password)
             .then((result) => {
                 const user = result.user;
-                // const newUser = { name, email }
-                // setUser(user);
+                const newUser = { name, email }
+                // save new user info to the database
+                fetch("/http://localhost:5000/users", {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('user created to db', data);
+                    })
+                setUser(user);
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser({ ...user, displayName: name, photoURL: photo });
