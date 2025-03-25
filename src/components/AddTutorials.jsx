@@ -9,7 +9,7 @@ const AddTutorials = () => {
     const [language, setLanguage] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
-    const [description, setDescription] = useState("");
+    const [details, setDetails] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -20,7 +20,7 @@ const AddTutorials = () => {
             image,
             language,
             price,
-            description,
+            details,
             review: 0,
         };
         // console.log(tutorialData);
@@ -89,8 +89,8 @@ const AddTutorials = () => {
                 />
                 <textarea
                     placeholder="Description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    value={details}
+                    onChange={(e) => setDetails(e.target.value)}
                     className="w-full p-2 border rounded"
                     required
                 ></textarea>
