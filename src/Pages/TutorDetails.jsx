@@ -18,6 +18,7 @@ const TutorDetails = () => {
     const handleBookTutor = () => {
         const bookedInfo = {
             tutorId: tutor._id,
+            tutorName: tutor.name,
             image: tutor.image,
             language: tutor.language,
             price: tutor.price,

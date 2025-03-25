@@ -10,6 +10,7 @@ import ErrorPage from "../components/ErrorPage";
 import AddTutorials from "../components/AddTutorials";
 import PrivateRoute from "./PrivateRoute";
 import TutorDetails from "../Pages/TutorDetails";
+import BookedTutors from "../components/BookedTutors";
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-tutors',
-                element: <h2>Hello4</h2>
+                element: <PrivateRoute><BookedTutors></BookedTutors></PrivateRoute>
 
             },
 

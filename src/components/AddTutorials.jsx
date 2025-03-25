@@ -23,6 +23,7 @@ const AddTutorials = () => {
             description,
             review: 0,
         };
+        // console.log(tutorialData);
 
         fetch("http://localhost:5000/tutors", {
             method: 'POST',
