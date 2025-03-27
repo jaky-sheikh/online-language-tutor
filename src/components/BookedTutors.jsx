@@ -13,25 +13,58 @@ const BookedTutors = () => {
             .then(data => setBookedTutors(data))
     }, [user?.email]);
 
-    const handleReview = (tutorId) => {
-        fetch(`http://localhost:5000/tutors/review/${tutorId}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
+    // const handleReview = (tutorId) => {
+    //     fetch(`http://localhost:5000/tutors/review/${tutorId}`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.modifiedCount > 0) {
+    //                 Swal.fire({
+    //                     icon: "success",
+    //                     title: "Review Added!",
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 });
+    //             }
+    //         })
+    // }
+
+    const handleReview = (tutor) => {
+        const reviewData = {
+            tutorId: tutor.tutorId,
+            tutorName: tutor.tutorName,
+            language: tutor.language,
+            price: tutor.price,
+            tutorEmail: tutor.tutorEmail,
+            userEmail: user.email,
+            reviewDate: new Date().toISOString()
+        };
+
+        fetch(`http://localhost:5000/tutors/review/${tutor.tutorId}`, {
+            // method: 'PAtCH',
+            // headers: {
+            //     'content-type': 'application/json'
+            // },
+            // body: JSON.stringify(reviewData)
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Review Added!",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-            })
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Review Added Successfully!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            )
+
     }
+
 
     return (
         <div className="max-w-6xl mx-auto p-5">
@@ -45,7 +78,8 @@ const BookedTutors = () => {
                         <p><strong>Price:</strong> ${tutor.price}</p>
                         <p><strong>Tutor Email:</strong> {tutor.tutorEmail}</p>
                         <button
-                            onClick={() => handleReview(tutor.tutorId)}
+                            // onClick={() => handleReview(tutor.tutorId)}
+                            onClick={() => handleReview(tutor)}
                             className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition"
                         >
                             Add Review

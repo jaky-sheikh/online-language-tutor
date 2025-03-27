@@ -53,7 +53,7 @@ const TutorDetails = () => {
             <p><strong>Language:</strong> {tutor.language}</p>
             <p><strong>Price:</strong> ${tutor.price}</p>
             <p><strong>Review:</strong> {tutor.review || 0}</p>
-            <p className="mt-3 text-gray-600">{tutor.description}</p>
+            <p className="mt-3 text-gray-600">{tutor.details}</p>
 
             <button
                 onClick={handleBookTutor}

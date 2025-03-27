@@ -39,7 +39,7 @@ const Registration = () => {
                 const user = result.user;
                 const newUser = { name, email }
                 // save new user info to the database
-                fetch("/http://localhost:5000/users", {
+                fetch("http://localhost:5000/users", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
